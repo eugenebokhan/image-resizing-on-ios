@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18191A552135AC1200F2630A /* Detailed Resize Measurements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18191A542135AC1200F2630A /* Detailed Resize Measurements.swift */; };
 		18A406C62134334F00C1ADDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A406C52134334F00C1ADDD /* AppDelegate.swift */; };
 		18A406C82134334F00C1ADDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A406C72134334F00C1ADDD /* ViewController.swift */; };
 		18A406CB2134334F00C1ADDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A406C92134334F00C1ADDD /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18191A542135AC1200F2630A /* Detailed Resize Measurements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detailed Resize Measurements.swift"; sourceTree = "<group>"; };
 		18A406C22134334F00C1ADDD /* ImageResizing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageResizing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A406C52134334F00C1ADDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18A406C72134334F00C1ADDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				18A406C52134334F00C1ADDD /* AppDelegate.swift */,
 				18A406C72134334F00C1ADDD /* ViewController.swift */,
 				18A406D72134343D00C1ADDD /* UIImage + Resize.swift */,
+				18191A542135AC1200F2630A /* Detailed Resize Measurements.swift */,
 				18A406D9213434A900C1ADDD /* Measurments.swift */,
 				18A406C92134334F00C1ADDD /* Main.storyboard */,
 				18A406CC2134335100C1ADDD /* Assets.xcassets */,
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A406DA213434A900C1ADDD /* Measurments.swift in Sources */,
+				18191A552135AC1200F2630A /* Detailed Resize Measurements.swift in Sources */,
 				18A406C82134334F00C1ADDD /* ViewController.swift in Sources */,
 				18A406D82134343D00C1ADDD /* UIImage + Resize.swift in Sources */,
 				18A406C62134334F00C1ADDD /* AppDelegate.swift in Sources */,
@@ -328,8 +332,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U59P58LC6V;
 				INFOPLIST_FILE = ImageResizing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,8 +352,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U59P58LC6V;
 				INFOPLIST_FILE = ImageResizing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -50,6 +50,26 @@ class ViewController: UIViewController {
         let accelerateMeasurement = measure(originalImage.resize(to: newSize, with: .Accelerate))
         log("ResizeTechnique: Accelerate, \(accelerateMeasurement.duration)")
         
+        log("\n\n ************************************************** \n\n")
+        
+        /// Detailed Measurement
+        
+        /// UIKit
+        let uikitMesaurement = originalImage.performDetailedMeasurementUIKit(to: newSize)
+        log("ResizeTechnique: UIKit \n\n\(uikitMesaurement.1)\n ************************************************** \n\n")
+        /// CoreImage
+        let coreImageMesaurement = originalImage.performDetailedMeasurementCoreImage(to: newSize)
+        log("ResizeTechnique: CoreImage \n\n\(coreImageMesaurement.1)\n ************************************************** \n\n")
+        /// CoreGraphics
+        let coreGraphicsMesaurement = originalImage.performDetailedMeasurementCoreGraphics(to: newSize)
+        log("ResizeTechnique: CoreGraphics \n\n\(coreGraphicsMesaurement.1)\n ************************************************** \n\n")
+        /// ImageIO
+        let imageIOMesaurement = originalImage.performDetailedMeasurementImageIO(to: newSize)
+        log("ResizeTechnique: ImageIO \n\n\(imageIOMesaurement.1)\n ************************************************** \n\n")
+        /// Accelerate
+        let accelerateMesaurement = originalImage.performDetailedMeasurementAccelerate(to: newSize)
+        log("ResizeTechnique: Accelerate \n\n\(accelerateMesaurement.1)\n ************************************************** \n\n")
+        
     }
     
     func log(_ message: String) {

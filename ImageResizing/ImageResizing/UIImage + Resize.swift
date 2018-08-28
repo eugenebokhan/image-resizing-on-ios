@@ -49,7 +49,7 @@ extension UIImage {
         case .UIKit:
             return resizeWithUIKit(to: newSize)
         case .CoreGraphics:
-            return resizeWithCoreGraphis(to: newSize)
+            return resizeWithCoreGraphics(to: newSize)
         case .CoreImage:
             return resizeWithCoreImage(to: newSize)
         case .ImageIO:
@@ -108,7 +108,7 @@ extension UIImage {
     ///
     /// - Parameter newSize: Size of the image output.
     /// - Returns: Resized image.
-    private func resizeWithCoreGraphis(to newSize: CGSize) -> UIImage {
+    private func resizeWithCoreGraphics(to newSize: CGSize) -> UIImage {
         var resultImage = self
         
         guard let cgImage = cgImage else { return resultImage }
