@@ -37,18 +37,42 @@ class ViewController: UIViewController {
         /// UIKit
         let uiKitMeasurement = measure(originalImage.resize(to: newSize, with: .UIKit))
         log("ResizeTechnique: UIKit, \(uiKitMeasurement.duration)")
+        if let uikitPNGData = uiKitMeasurement.result.pngData() {
+            let filename = getDocumentsDirectory().appendingPathComponent("UIKit.png")
+            try? uikitPNGData.write(to: filename)
+        }
+        
         /// CoreImage
         let coreImageMeasurement = measure(originalImage.resize(to: newSize, with: .CoreImage))
         log("ResizeTechnique: CoreImage, \(coreImageMeasurement.duration)")
+        if let coreImagePNGData = coreImageMeasurement.result.pngData() {
+            let filename = getDocumentsDirectory().appendingPathComponent("CoreImage.png")
+            try? coreImagePNGData.write(to: filename)
+        }
+        
         /// CoreGraphics
         let coreGraphicsMeasurement = measure(originalImage.resize(to: newSize, with: .CoreGraphics))
         log("ResizeTechnique: CoreGraphics, \(coreGraphicsMeasurement.duration)")
+        if let coreGraphicsPNGData = coreGraphicsMeasurement.result.pngData() {
+            let filename = getDocumentsDirectory().appendingPathComponent("CoreGraphics.png")
+            try? coreGraphicsPNGData.write(to: filename)
+        }
+        
         /// ImageIO
         let imageIOMeasurement = measure(originalImage.resize(to: newSize, with: .ImageIO))
         log("ResizeTechnique: ImageIO, \(imageIOMeasurement.duration)")
+        if let imageIOPNGData = imageIOMeasurement.result.pngData() {
+            let filename = getDocumentsDirectory().appendingPathComponent("ImageIO.png")
+            try? imageIOPNGData.write(to: filename)
+        }
+        
         /// Accelerate
         let accelerateMeasurement = measure(originalImage.resize(to: newSize, with: .Accelerate))
         log("ResizeTechnique: Accelerate, \(accelerateMeasurement.duration)")
+        if let acceleratePNGData = accelerateMeasurement.result.pngData() {
+            let filename = getDocumentsDirectory().appendingPathComponent("Accelerate.png")
+            try? acceleratePNGData.write(to: filename)
+        }
         
         log("\n\n ************************************************** \n\n")
         
@@ -74,6 +98,11 @@ class ViewController: UIViewController {
     
     func log(_ message: String) {
         textView.text += message + "\n\n"
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
     
     

@@ -120,7 +120,16 @@ extension UIImage {
         let colorSpace = cgImage.colorSpace!
         let bitmapInfo = cgImage.bitmapInfo
         
-        guard let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo.rawValue) else { return resultImage }
+        guard let context = CGContext(data: nil,
+                                      width: width,
+                                      height: height,
+                                      bitsPerComponent: bitsPerComponent,
+                                      bytesPerRow: bytesPerRow,
+                                      space: colorSpace,
+                                      bitmapInfo: bitmapInfo.rawValue) else {
+            print("ERROR")
+            return resultImage
+        }
         context.interpolationQuality = .high
         let rect = CGRect(origin: CGPoint.zero, size: newSize)
         context.draw(cgImage, in: rect)
