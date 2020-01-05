@@ -28,6 +28,8 @@ class ImageResizingTests: XCTestCase {
     var l2Distance: EuclideanDistance!
     var lanczosScale: MPSImageLanczosScale!
 
+    var jsonEncoder: JSONEncoder!
+
     var sourceImage: CGImage! = nil
     let destinationSize = CGSize(width: 600,
                                  height: 600)
@@ -42,6 +44,9 @@ class ImageResizingTests: XCTestCase {
             self.textureDifference = try .init(context: self.context)
             self.l2Distance = try .init(context: self.context)
             self.lanczosScale = .init(device: self.context.device)
+
+            self.jsonEncoder = JSONEncoder()
+            self.jsonEncoder.outputFormatting = .prettyPrinted
 
             guard let sourceImageURL = Bundle(for: Self.self).url(forResource: "Clown_Fish_1200x1200",
                                                             withExtension: "png"),
@@ -113,9 +118,7 @@ class ImageResizingTests: XCTestCase {
                 distanceAttachment.lifetime = .keepAlways
                 self.add(distanceAttachment)
 
-                let jsonEncoder = JSONEncoder()
-                jsonEncoder.outputFormatting = .prettyPrinted
-                let data = try jsonEncoder.encode(differenceTexture.codable())
+                let data = try self.jsonEncoder.encode(differenceTexture.codable())
 
                 let differenceAttachment = XCTAttachment(data: data,
                                                          uniformTypeIdentifier: Self.textureUTI)
@@ -128,7 +131,7 @@ class ImageResizingTests: XCTestCase {
         }
     }
 
-    // MARK: - Perfomance
+    // MARK: - Performance
 
     func testUIKitPerformance() {
         measure {
