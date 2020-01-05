@@ -1,0 +1,14 @@
+platform :ios, '13.2'
+
+use_frameworks!
+
+def common_pods
+  pod 'Alloy/Shaders'
+end
+
+target 'ImageResizing' do
+  common_pods
+  target 'ImageResizingTests' do
+    common_pods
+  end
+end

@@ -1,0 +1,18 @@
+PODS:
+  - Alloy/Core (0.12.0)
+  - Alloy/Shaders (0.12.0):
+    - Alloy/Core
+
+DEPENDENCIES:
+  - Alloy/Shaders
+
+SPEC REPOS:
+  trunk:
+    - Alloy
+
+SPEC CHECKSUMS:
+  Alloy: 5a766cf557603d059cad3a98503536e7d86ad268
+
+PODFILE CHECKSUM: 0a9dbe57be10eaa716b4b636729b7f7237b7b473
+
+COCOAPODS: 1.8.4
